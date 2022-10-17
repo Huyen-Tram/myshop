@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_print
-
 import 'package:flutter/material.dart';
 
 import '../../models/product.dart';
@@ -17,22 +15,23 @@ class ProductGridTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-        borderRadius: BorderRadius.circular(10),
-        child: GridTile(
-          footer: buildGridFooterBar(context),
-          child: GestureDetector(
-            onTap: () {
-              Navigator.of(context).pushNamed(
-                ProductDetailScreen.routeName,
-                arguments: product.id,
-              );
-            },
-            child: Image.network(
-              product.imageUrl,
-              fit: BoxFit.cover,
-            ),
+      borderRadius: BorderRadius.circular(10),
+      child: GridTile(
+        footer: buildGridFooterBar(context),
+        child: GestureDetector(
+          onTap: () {
+            Navigator.of(context).pushNamed(
+              ProductDetailScreen.routeName,
+              arguments: product.id,
+            );
+          },
+          child: Image.network(
+            product.imageUrl,
+            fit: BoxFit.cover,
           ),
-        ));
+        ),
+      ),
+    );
   }
 
   Widget buildGridFooterBar(BuildContext context) {
@@ -52,7 +51,6 @@ class ProductGridTile extends StatelessWidget {
           );
         },
       ),
-
       title: Text(
         product.title,
         textAlign: TextAlign.center,
