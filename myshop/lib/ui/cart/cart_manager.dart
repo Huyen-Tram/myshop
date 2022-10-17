@@ -34,7 +34,6 @@ class CartManager with ChangeNotifier {
     });
     return total;
   }
-
   void addItem(Product product) {
     if (_items.containsKey(product.id)) {
       //chang quantity...

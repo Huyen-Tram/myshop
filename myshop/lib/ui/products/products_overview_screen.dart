@@ -5,7 +5,6 @@ import 'top_right_badge.dart';
 import 'products_grid.dart';
 import '../shared/app_drawer.dart';
 import 'package:provider/provider.dart';
-
 enum FilterOptions { favorites, all }
 
 class ProductsOverviewScreen extends StatefulWidget {
