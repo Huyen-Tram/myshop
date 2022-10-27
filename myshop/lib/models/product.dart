@@ -46,4 +46,5 @@ class Product {
       isFavorite: isFavorite ?? this.isFavorite,
     );
   }
+ 
 }
