@@ -5,7 +5,6 @@ import '../../models/product.dart';
 import '../shared/dialog_utils.dart';
 
  import 'products_manager.dart';
-// import '../products/products_manager.dart';
 
 class EditProductScreen extends StatefulWidget {
   static const routeName = '/edit-product';
@@ -83,6 +82,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
 
     try {
       final productsManager = context.read<ProductsManager>();
+      //  print(_editedProduct.title);
       if (_editedProduct.id != null) {
         productsManager.updateProduct(_editedProduct);
       } else {
@@ -143,13 +143,17 @@ class _EditProductScreenState extends State<EditProductScreen> {
       autofocus: true,
       validator: (value) {
         if (value!.isEmpty) {
+      
           return 'Please provide a value.';
         }
+        // print(value);
         return null;
       },
       onSaved: (value) {
         _editedProduct = _editedProduct.coppyWith(title: value);
+        // print(_editedProduct.title);
       },
+    
     );
   }
 
